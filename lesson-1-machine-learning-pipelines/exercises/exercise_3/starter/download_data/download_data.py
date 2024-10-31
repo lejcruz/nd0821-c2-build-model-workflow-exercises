@@ -2,10 +2,9 @@
 import argparse
 import logging
 import pathlib
+import tempfile
 import wandb
 import requests
-import tempfile
-
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)-15s %(message)s")
 logger = logging.getLogger()

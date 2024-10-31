@@ -33,6 +33,17 @@ def go(config: DictConfig):
     # to the "process_data" component
     ##################
 
+    _ = mlflow.run(
+        os.path.join(root_path, "process_data"),
+        "main",
+        parameters={
+            "input_artifact": config["process_data"]["input_artifact"],
+            "artifact_name": config["process_data"]["artifact_name"],
+            "artifact_type": config["process_data"]["artifact_type"],
+            "artifact_description": config["process_data"]["artifact_description"]
+        },
+    )
+
 
 
 if __name__ == "__main__":

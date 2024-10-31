@@ -1,1 +1,76 @@
 .DS_Store
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Virtual environment
+env/
+venv/
+ENV/
+.venv/
+*.env
+
+# Conda environment files
+conda-meta/
+*.conda
+*.env.yaml
+*.env.yml
+
+# Hydra configuration outputs
+hydra_output/
+outputs/
+
+# MLflow artifacts
+mlruns/
+*.mlmodel
+
+# W&B files
+wandb/
+*.wandb
+config.yaml
+
+# Pytest and Coverage reports
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+*.py,cover
+.cache
+pytest_cache/
+coverage/
+
+# VSCode settings
+.vscode/
+*.code-workspace
+
+# Python Packaging
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+.Python
+pip-wheel-metadata/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Logs and local data
+*.log
+*.csv
+*.tsv
+*.sqlite3
+*.db
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
