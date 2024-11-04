@@ -3,7 +3,7 @@ import scipy.stats
 
 # COMPLETE HERE: make this test accept the fixtures defined in the
 # conftest.py file (data and ks_alpha)
-def test_kolmogorov_smirnov(...):
+def test_kolmogorov_smirnov(data, ks_alpha):
 
     sample1, sample2 = data
 
@@ -27,10 +27,12 @@ def test_kolmogorov_smirnov(...):
 
     for col in columns:
 
-        ts, p_value = scipy.stats.ks_2samp(sample1[col], sample2[col])
+        ts, p_value = scipy.stats.ks_2samp(sample1[col].dropna(), sample2[col].dropna())
 
         # NOTE: as always, the p-value should be interpreted as the probability of
         # obtaining a test statistic (TS) equal or more extreme that the one we got
         # by chance, when the null hypothesis is true. If this probability is not
         # large enough, this dataset should be looked at carefully, hence we fail
-        assert p_value > alpha_prime
+        assert p_value > alpha_prime, (
+            f"KS test for col {col} is: statistic: {ts} p_value:  {p_value}",
+            f"p value should be less than {alpha_prime}")
